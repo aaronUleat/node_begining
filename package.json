@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronUleat/node_begining.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronUleat/node_begining/issues"
+  },
+  "homepage": "https://github.com/aaronUleat/node_begining#readme",
+  "devDependencies": {
+    "markdown-pdf": "^9.0.0"
+  }
+}
