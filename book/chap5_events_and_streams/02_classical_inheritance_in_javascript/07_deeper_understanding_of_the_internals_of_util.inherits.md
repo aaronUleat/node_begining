@@ -92,4 +92,27 @@ Y esta es exactamente la implementación que se encuentra
 en el módulo util de Node.js (que está escrito en JavaScript).
 La implementación directamente desde la fuente se muestra en el Listado 5-14.
 
+Listing 5-14. Code Retrieved from Node.js source util.js
+
+```
+exports.inherits = function(ctor, superCtor) {
+    ctor.super_ = superCtor;
+    ctor.prototype = Object.create(superCtor.prototype, {
+        constructor: {
+            value: ctor,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+};
+```
+
+Una cosa más que hace la función heredada es que agrega una propiedad
+super_ a la clase secundaria, que apunta a la
+clase padre Esto es simplemente para la convención para que sepa
+que este prototipo de función secundaria ha recibido miembros
+de esta super_ class al depurar o escribir código basado en la reflexión.
+
+
 

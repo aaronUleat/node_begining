@@ -12,3 +12,4 @@ Bird.prototype = Object.create(Animal.prototype);
 
 var bird = new Bird();
 bird.walk();
+
