@@ -33,3 +33,33 @@ como se muestra en el Listado 5-22.
 
 Listing 5-22. events/7listenerevents.js
 
+```
+var EventEmitter = require('events').EventEmitter;
+var emitter = new EventEmitter();
+
+// Listener addition / removal notifications
+
+emitter.on("newListener", function (eventName, listenerFunction) {
+    console.log(eventName, 'listener removed', listenerFunction.name);
+});
+
+emitter.on('newListener', function (eventName, listenerFunction) {
+    console.log(eventName, 'listener added', listenerFunction.name);
+});
+
+function a() { }
+function b() { }
+
+// Add
+
+emitter.removeListener('foo', a);
+emitter.removeListener('foo', b)
+```
+
+
+Tenga en cuenta que si agrega un `removeListener` después
+de agregar un controlador para` newListener`, recibirá una
+notificación sobre el
+La adición `removeListener` también, por lo que es convencional
+agregar el controlador de eventos removeListener primero como
+Lo hicimos en esta muestra.
