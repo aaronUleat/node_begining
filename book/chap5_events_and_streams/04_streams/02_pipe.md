@@ -19,3 +19,33 @@ Ejemplo que transmite un archivo desde el sistema de archivos a la consola del u
 
 Listing 5-36. streams/2pipe/1basic.js
 
+```
+var fs = require('fs');
+// Create readable stream
+var readableStream = fs.createWriteStream('./cool.txt');
+// Pipe it to stdout
+readableStream.pipe(process.stdout);
+```
+
+También puede encadenar múltiples corrientes utilizando pipe. 
+Por ejemplo, el código en el Listado 5-37 crea una secuencia de lectura desde
+un archivo, lo canaliza a través de una secuencia de transformación zip, 
+y luego lo canaliza a una secuencia de archivos de escritura. Esto crea un archivo zip en el
+sistema de archivos.
+
+Listing 5-37. streams/2pipe/2chain.js
+
+```
+var fs = require('fs');
+var gzip = require('zlib').createGzip();
+var inp = fs.createReadStream('cool.txt');
+var out = fs.createWriteStream('cool.txt.gz');
+// Pipe chain
+inp.pipe(gzip).pipe(out);
+```
+
+Las transmisiones en Node.js se basan en eventos. Todo lo que hace la operación de pipe es 
+suscribirse a los eventos relevantes en el
+fuente y llamar a las funciones relevantes en el destino. Para la mayoría de los propósitos, 
+la tubería es todo lo que necesita saber acerca de
+como consumidor de API, pero vale la pena conocer más detalles cuando desea profundizar en las corrientes.
