@@ -32,3 +32,14 @@ recibirá un mensaje que estamos eligiendo ignorar. Finalmente,
 el proceso se cerrará luego de cinco segundos, 
 naturalmente, una vez que no tengamos ninguna tarea pendiente 
 (como se muestra en el Listado 5-34).
+
+Listing 5-34. Sample Run of Ignoring Ctrl+C Messages Demo
+
+```
+$ node 3signals.js
+Started. Will exit in 5 seconds
+Got SIGINT. Ignoring.
+Got SIGINT. Ignoring.
+5 seconds passed. Exiting
+```
+
