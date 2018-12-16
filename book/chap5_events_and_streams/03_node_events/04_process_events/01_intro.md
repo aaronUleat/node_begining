@@ -1,6 +1,5 @@
 ## Process Events
-
-Un número de clases dentro del núcleo Node.js heredan de EventEmitter.
+Un número de clases dentro del núcleo Node.js heredan de EventEmitter. 
 El objeto de proceso global es también una instancia de
 EventEmitter, como puede ver en el Listado 5-29.
 
@@ -11,4 +10,5 @@ $ node -e "console.log(process instanceof require('events').EventEmitter)"
 true
 ```
 
+```
 
