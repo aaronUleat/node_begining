@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aaronUleat/node_begining#readme",
   "devDependencies": {
+    "connect": "^3.6.6",
     "markdown-pdf": "^9.0.0"
   },
   "dependencies": {
